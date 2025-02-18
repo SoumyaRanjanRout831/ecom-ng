@@ -1,0 +1,34 @@
+<div class="add_category">
+  @if(isEdit){
+    <h1>Edit Category</h1>
+  } @else {
+    <h1>Add Category</h1>
+  }
+
+  <!-- Input Field -->
+  <mat-form-field class="category_name full-width">
+    <mat-label>Name</mat-label>
+    <input
+      matInput
+      type="text"
+      [formControl]="name"
+      placeholder="Category Name"
+    />
+    @if (name.invalid) {
+      <mat-error>{{ errorMessage() }}</mat-error>
+    }
+  </mat-form-field>
+
+  <!-- Button in Next Line -->
+  <div class="button-container">
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      (click)="onSubmit()"
+      [disabled]="name.invalid"
+    >
+      {{buttonName}}
+    </button>
+  </div>
+</div>
