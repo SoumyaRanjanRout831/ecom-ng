@@ -1,32 +1,38 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment.development';
+
 @Injectable({
   providedIn: 'root',
 })
-export class CategoryService {
-  private apiUrl = `${environment.apiUrl}/category`;
+export class BrandService {
+  // private apiUrl = 'http://localhost:3000/category';
+
+
+  private apiUrl = `${environment.apiUrl}/product`;
 
   private http = inject(HttpClient);
 
-  getCategories(): Observable<any> {
+  constructor() {}
+
+  getAllBrand(): Observable<any> {
     return this.http.get<any>(this.apiUrl, { responseType: 'json' });
   }
 
-  addCategory(body: any): Observable<any> {
+  addBrand(body: any): Observable<any> {
     return this.http.post<any>(this.apiUrl, body);
   }
 
-  editCategory(id: string | null, body: any): Observable<any> {
+  editBrand(id: string | null, body: any): Observable<any> {
     return this.http.put<any>(`${this.apiUrl}/${id}`, body);
   }
 
-  getCategoryById(id: string): Observable<any> {
+  getBrandById(id: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 
-  deleteCategory(id: string): Observable<any> {
+  deleteBrand(id: string): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/${id}`);
   }
 }
