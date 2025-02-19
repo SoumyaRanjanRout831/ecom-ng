@@ -1,0 +1,26 @@
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 40%;
+}
+
+td,
+th {
+  width: 25%;
+}
+
+.centered-div {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.input_addcategory {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
