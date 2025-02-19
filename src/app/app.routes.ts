@@ -10,7 +10,7 @@ export const routes: Routes = [
   { path: 'admin/categories', component: CategoryComponent },
   { path: 'admin/categories/add', component: CategoryFormComponent },
   { path: 'admin/categories/:id', component: CategoryFormComponent },
-  { path: 'admin/product', component: BrandComponent },
-  { path: 'admin/product/add', component: BrandFormComponent },
-  { path: 'admin/product/:id', component: BrandFormComponent },
+  { path: 'admin/brand', component: BrandComponent },
+  { path: 'admin/brand/add', component: BrandFormComponent },
+  { path: 'admin/brand/:id', component: BrandFormComponent },
 ];

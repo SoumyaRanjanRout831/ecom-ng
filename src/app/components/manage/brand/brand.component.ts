@@ -4,10 +4,10 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { CategoryService } from '../../../services/category.service';
 import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
 import { BrandService } from '../../../services/brand.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-brand',
@@ -19,6 +19,7 @@ import { BrandService } from '../../../services/brand.service';
     MatSortModule,
     MatPaginatorModule,
     MatButtonModule,
+    CommonModule
   ],
   templateUrl: './brand.component.html',
   styleUrl: './brand.component.css',
@@ -42,7 +43,7 @@ export class BrandComponent {
   }
 
   navigateToAddCategory() {
-    this.router.navigate(['admin/product/add']);
+    this.router.navigate(['admin/brand/add']);
   }
 
   ngAfterViewInit() {
@@ -60,7 +61,7 @@ export class BrandComponent {
   }
 
   editCategory(id: string) {
-    this.router.navigate([`admin/product/${id}`]);
+    this.router.navigate([`admin/brand/${id}`]);
   }
 
   deleteCategory(id: string) {

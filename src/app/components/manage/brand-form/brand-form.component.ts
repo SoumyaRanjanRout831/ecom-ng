@@ -58,7 +58,6 @@ export class BrandFormComponent implements OnInit {
       this.buttonName = this.dynamicId ? 'Edit' : 'Add';
       if (this.dynamicId) {
         this.brandService.getBrandById(this.dynamicId).subscribe((res) => {
-          console.log(res);
           this.name.setValue(res.brandNameById.name);
         });
       }

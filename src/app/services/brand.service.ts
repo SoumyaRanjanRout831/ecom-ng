@@ -7,10 +7,8 @@ import { environment } from '../../environments/environment.development';
   providedIn: 'root',
 })
 export class BrandService {
-  // private apiUrl = 'http://localhost:3000/category';
 
-
-  private apiUrl = `${environment.apiUrl}/product`;
+  private apiUrl = `${environment.apiUrl}/brand`;
 
   private http = inject(HttpClient);
 
